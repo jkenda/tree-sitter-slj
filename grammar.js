@@ -32,13 +32,13 @@ module.exports = grammar({
             )),
         )),
 
-        zanka_dokler: $ => seq("dokler", $.pogoj, "{", $.zaporedje, "}"),
+        zanka_dokler: $ => seq("dokler", $.pogoj, $.okvir),
         funkcija: $ => seq("funkcija", $.ime, "(", optional($.parametri), ")", optional(seq("->", $.tip, )), $.okvir),
         funkcijski_klic: $ => seq($.ime, "(", optional($.argumenti), ")"),
         vrni: $ => seq("vrni", $._izraz),
 
         pogoj: $ => $._izraz,
-        argumenti: $ => choice(seq($._izraz), seq($._izraz, ",", $.argumenti)),
+        argumenti: $ => seq(repeat(seq($._izraz, ",")), $._izraz),
 
         _izraz: $ => choice(
             $._unarni_izraz,
@@ -81,7 +81,7 @@ module.exports = grammar({
         _osnovni: $ => choice(
             "resnica",
             "laž",
-            $.število,
+            $._število,
             $.niz,
             $.ime,
             seq("(", $._izraz, ")"),
@@ -100,7 +100,7 @@ module.exports = grammar({
             seq("@", $.tip),
         ),
 
-        parametri: $ => choice(seq($.ime, ":", $.tip), seq($.ime, ":", $.tip, ",", $.parametri)),
+        parametri: $ => seq(repeat(seq($.ime, ":", $.tip, ",")), seq($.ime, ":", $.tip)),
 
         prireditveni_op: _ => choice(
             "+=",
@@ -118,7 +118,7 @@ module.exports = grammar({
             "&=",
         ),
 
-        število: $ => choice($.celo, $.real),
+        _število: $ => choice($.celo, $.real),
         celo:    _ => /-?(\d+|\d{1,3}(_\d{3})+)/,
         real:    _ => /-?(\d+\.\d+|\d{1,3}(_\d{3})+\.(\d{3}_)+\d{1,3})/,
         ime:     _ => /[_\p{Letter}][\w\dčžš]*/,

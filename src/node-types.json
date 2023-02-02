@@ -8,7 +8,7 @@
       "required": false,
       "types": [
         {
-          "type": "argumenti",
+          "type": "celo",
           "named": true
         },
         {
@@ -24,7 +24,7 @@
           "named": true
         },
         {
-          "type": "število",
+          "type": "real",
           "named": true
         }
       ]
@@ -85,6 +85,10 @@
       "required": true,
       "types": [
         {
+          "type": "celo",
+          "named": true
+        },
+        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -97,7 +101,7 @@
           "named": true
         },
         {
-          "type": "število",
+          "type": "real",
           "named": true
         }
       ]
@@ -111,6 +115,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "celo",
+          "named": true
+        },
         {
           "type": "funkcijski_klic",
           "named": true
@@ -128,7 +136,7 @@
           "named": true
         },
         {
-          "type": "število",
+          "type": "real",
           "named": true
         }
       ]
@@ -181,10 +189,6 @@
           "named": true
         },
         {
-          "type": "parametri",
-          "named": true
-        },
-        {
           "type": "tip",
           "named": true
         }
@@ -200,6 +204,10 @@
       "required": false,
       "types": [
         {
+          "type": "celo",
+          "named": true
+        },
+        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -212,7 +220,7 @@
           "named": true
         },
         {
-          "type": "število",
+          "type": "real",
           "named": true
         }
       ]
@@ -255,6 +263,10 @@
       "required": true,
       "types": [
         {
+          "type": "celo",
+          "named": true
+        },
+        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -267,7 +279,7 @@
           "named": true
         },
         {
-          "type": "število",
+          "type": "real",
           "named": true
         }
       ]
@@ -356,6 +368,10 @@
       "required": false,
       "types": [
         {
+          "type": "celo",
+          "named": true
+        },
+        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -368,7 +384,7 @@
           "named": true
         },
         {
-          "type": "število",
+          "type": "real",
           "named": true
         }
       ]
@@ -383,11 +399,11 @@
       "required": true,
       "types": [
         {
-          "type": "pogoj",
+          "type": "okvir",
           "named": true
         },
         {
-          "type": "zaporedje",
+          "type": "pogoj",
           "named": true
         }
       ]
@@ -439,25 +455,6 @@
         },
         {
           "type": "zanka_dokler",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "število",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "celo",
-          "named": true
-        },
-        {
-          "type": "real",
           "named": true
         }
       ]

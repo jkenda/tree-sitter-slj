@@ -224,16 +224,8 @@
           "name": "pogoj"
         },
         {
-          "type": "STRING",
-          "value": "{"
-        },
-        {
           "type": "SYMBOL",
-          "name": "zaporedje"
-        },
-        {
-          "type": "STRING",
-          "value": "}"
+          "name": "okvir"
         }
       ]
     },
@@ -342,33 +334,27 @@
       "name": "_izraz"
     },
     "argumenti": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_izraz"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_izraz"
+              },
+              {
+                "type": "STRING",
+                "value": ","
+              }
+            ]
+          }
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_izraz"
-            },
-            {
-              "type": "STRING",
-              "value": ","
-            },
-            {
-              "type": "SYMBOL",
-              "name": "argumenti"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "_izraz"
         }
       ]
     },
@@ -769,7 +755,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "število"
+          "name": "_število"
         },
         {
           "type": "SYMBOL",
@@ -904,24 +890,31 @@
       ]
     },
     "parametri": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "ime"
-            },
-            {
-              "type": "STRING",
-              "value": ":"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "tip"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "ime"
+              },
+              {
+                "type": "STRING",
+                "value": ":"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "tip"
+              },
+              {
+                "type": "STRING",
+                "value": ","
+              }
+            ]
+          }
         },
         {
           "type": "SEQ",
@@ -937,14 +930,6 @@
             {
               "type": "SYMBOL",
               "name": "tip"
-            },
-            {
-              "type": "STRING",
-              "value": ","
-            },
-            {
-              "type": "SYMBOL",
-              "name": "parametri"
             }
           ]
         }
@@ -1007,7 +992,7 @@
         }
       ]
     },
-    "število": {
+    "_število": {
       "type": "CHOICE",
       "members": [
         {
