@@ -1,5 +1,5 @@
 module.exports = grammar({
-    name: 'SLJ',
+    name: 'slj',
 
     rules: {
         source_file: $ => repeat($._stavek),
