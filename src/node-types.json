@@ -8,10 +8,6 @@
       "required": false,
       "types": [
         {
-          "type": "celo",
-          "named": true
-        },
-        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -24,7 +20,7 @@
           "named": true
         },
         {
-          "type": "real",
+          "type": "stevilo",
           "named": true
         }
       ]
@@ -85,10 +81,6 @@
       "required": true,
       "types": [
         {
-          "type": "celo",
-          "named": true
-        },
-        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -101,7 +93,7 @@
           "named": true
         },
         {
-          "type": "real",
+          "type": "stevilo",
           "named": true
         }
       ]
@@ -115,10 +107,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "celo",
-          "named": true
-        },
         {
           "type": "funkcijski_klic",
           "named": true
@@ -136,7 +124,7 @@
           "named": true
         },
         {
-          "type": "real",
+          "type": "stevilo",
           "named": true
         }
       ]
@@ -204,10 +192,6 @@
       "required": false,
       "types": [
         {
-          "type": "celo",
-          "named": true
-        },
-        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -220,7 +204,7 @@
           "named": true
         },
         {
-          "type": "real",
+          "type": "stevilo",
           "named": true
         }
       ]
@@ -263,10 +247,6 @@
       "required": true,
       "types": [
         {
-          "type": "celo",
-          "named": true
-        },
-        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -279,7 +259,7 @@
           "named": true
         },
         {
-          "type": "real",
+          "type": "stevilo",
           "named": true
         }
       ]
@@ -310,6 +290,10 @@
           "named": true
         },
         {
+          "type": "komentar",
+          "named": true
+        },
+        {
           "type": "makro_funkcija",
           "named": true
         },
@@ -337,17 +321,18 @@
     }
   },
   {
+    "type": "stevilo",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "tip",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
-        {
-          "type": "celo",
-          "named": true
-        },
         {
           "type": "parametri",
           "named": true
@@ -368,10 +353,6 @@
       "required": false,
       "types": [
         {
-          "type": "celo",
-          "named": true
-        },
-        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -384,7 +365,7 @@
           "named": true
         },
         {
-          "type": "real",
+          "type": "stevilo",
           "named": true
         }
       ]
@@ -431,6 +412,10 @@
         },
         {
           "type": "kombinirano_prirejanje",
+          "named": true
+        },
+        {
+          "type": "komentar",
           "named": true
         },
         {
@@ -629,10 +614,6 @@
     "named": false
   },
   {
-    "type": "celo",
-    "named": true
-  },
-  {
     "type": "dokler",
     "named": false
   },
@@ -645,6 +626,10 @@
     "named": true
   },
   {
+    "type": "komentar",
+    "named": true
+  },
+  {
     "type": "laž",
     "named": false
   },
@@ -654,10 +639,6 @@
   },
   {
     "type": "niz",
-    "named": true
-  },
-  {
-    "type": "real",
     "named": true
   },
   {

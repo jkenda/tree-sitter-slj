@@ -3,10 +3,9 @@ funkcija je_deljivo(deljenec: celo, delitelj: celo) -> bool {
 }
 
 funkcija je_praštevilo(kandidat: celo) -> bool {
-    praštevilo = resnica
+    naj praštevilo = resnica
 
-    naj i = 2
-    dokler i <= kandidat / 2 && praštevilo {
+    naj i = 2; dokler i <= kandidat / 2 && praštevilo {
         če je_deljivo(kandidat, i) {
             praštevilo = laž
         }

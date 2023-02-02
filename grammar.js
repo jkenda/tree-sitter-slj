@@ -16,6 +16,7 @@ module.exports = grammar({
             $.funkcija,
             $.funkcijski_klic,
             $.vrni,
+            $.komentar,
         ),
 
         makro_funkcija: $ => seq($.ime, "!", "(", optional($.argumenti), ")"),
@@ -81,7 +82,7 @@ module.exports = grammar({
         _osnovni: $ => choice(
             "resnica",
             "laž",
-            $._število,
+            $.stevilo,
             $.niz,
             $.ime,
             seq("(", $._izraz, ")"),
@@ -95,7 +96,7 @@ module.exports = grammar({
             "celo",
             "real",
             "znak",
-            seq("[", $.tip, ";", $.celo, "]"),
+            seq("[", $.tip, ";", $._celo, "]"),
             seq("{", optional($.parametri), "}"),
             seq("@", $.tip),
         ),
@@ -118,10 +119,11 @@ module.exports = grammar({
             "&=",
         ),
 
-        _število: $ => choice($.celo, $.real),
-        celo:    _ => /-?(\d+|\d{1,3}(_\d{3})+)/,
-        real:    _ => /-?(\d+\.\d+|\d{1,3}(_\d{3})+\.(\d{3}_)+\d{1,3})/,
+        stevilo: $ => choice($._celo, $._real),
+        _celo:    _ => /-?(\d+|\d{1,3}(_\d{3})+)/,
+        _real:    _ => /-?(\d+\.\d+|\d{1,3}(_\d{3})+\.(\d{3}_)+\d{1,3})/,
         ime:     _ => /[_\p{Letter}][\w\dčžš]*/,
         niz:     _ => /\"[^\n\"]*\"/,
+        komentar: _ => /#.*/,
     }
 });

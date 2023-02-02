@@ -57,6 +57,10 @@
         {
           "type": "SYMBOL",
           "name": "vrni"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "komentar"
         }
       ]
     },
@@ -755,7 +759,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_število"
+          "name": "stevilo"
         },
         {
           "type": "SYMBOL",
@@ -841,7 +845,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "celo"
+              "name": "_celo"
             },
             {
               "type": "STRING",
@@ -992,24 +996,24 @@
         }
       ]
     },
-    "_število": {
+    "stevilo": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "celo"
+          "name": "_celo"
         },
         {
           "type": "SYMBOL",
-          "name": "real"
+          "name": "_real"
         }
       ]
     },
-    "celo": {
+    "_celo": {
       "type": "PATTERN",
       "value": "-?(\\d+|\\d{1,3}(_\\d{3})+)"
     },
-    "real": {
+    "_real": {
       "type": "PATTERN",
       "value": "-?(\\d+\\.\\d+|\\d{1,3}(_\\d{3})+\\.(\\d{3}_)+\\d{1,3})"
     },
@@ -1020,6 +1024,10 @@
     "niz": {
       "type": "PATTERN",
       "value": "\\\"[^\\n\\\"]*\\\""
+    },
+    "komentar": {
+      "type": "PATTERN",
+      "value": "#.*"
     }
   },
   "extras": [

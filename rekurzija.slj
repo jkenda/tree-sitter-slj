@@ -1,3 +1,4 @@
+# izračunaj faktorielo/fakulteto
 funkcija faktoriela(a: celo) -> celo {
     če a <= 1 {
         vrni 1
