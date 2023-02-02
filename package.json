@@ -1,0 +1,11 @@
+{
+  "name": "tree-sitter-slj",
+  "version": "0.1.0",
+  "description": "tree-sitter grammar for SLJ",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jakob Kenda",
+  "license": "ISC"
+}

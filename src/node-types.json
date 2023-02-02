@@ -1,0 +1,714 @@
+[
+  {
+    "type": "argumenti",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "argumenti",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "število",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "funkcija",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "okvir",
+          "named": true
+        },
+        {
+          "type": "parametri",
+          "named": true
+        },
+        {
+          "type": "tip",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "funkcijski_klic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "argumenti",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inicializacija",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "število",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "kombinirano_prirejanje",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "prireditveni_op",
+          "named": true
+        },
+        {
+          "type": "število",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "makro_funkcija",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "argumenti",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "okvir",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "zaporedje",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parametri",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "parametri",
+          "named": true
+        },
+        {
+          "type": "tip",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pogoj",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "število",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pogojni_stavek",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "okvir",
+          "named": true
+        },
+        {
+          "type": "pogoj",
+          "named": true
+        },
+        {
+          "type": "pogojni_stavek",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "prireditveni_op",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "prirejanje",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "število",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "funkcija",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "inicializacija",
+          "named": true
+        },
+        {
+          "type": "kombinirano_prirejanje",
+          "named": true
+        },
+        {
+          "type": "makro_funkcija",
+          "named": true
+        },
+        {
+          "type": "okvir",
+          "named": true
+        },
+        {
+          "type": "pogojni_stavek",
+          "named": true
+        },
+        {
+          "type": "prirejanje",
+          "named": true
+        },
+        {
+          "type": "vrni",
+          "named": true
+        },
+        {
+          "type": "zanka_dokler",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tip",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "celo",
+          "named": true
+        },
+        {
+          "type": "parametri",
+          "named": true
+        },
+        {
+          "type": "tip",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "vrni",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "število",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "zanka_dokler",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "pogoj",
+          "named": true
+        },
+        {
+          "type": "zaporedje",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "zaporedje",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "funkcija",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "inicializacija",
+          "named": true
+        },
+        {
+          "type": "kombinirano_prirejanje",
+          "named": true
+        },
+        {
+          "type": "makro_funkcija",
+          "named": true
+        },
+        {
+          "type": "okvir",
+          "named": true
+        },
+        {
+          "type": "pogojni_stavek",
+          "named": true
+        },
+        {
+          "type": "prirejanje",
+          "named": true
+        },
+        {
+          "type": "vrni",
+          "named": true
+        },
+        {
+          "type": "zanka_dokler",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "število",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "celo",
+          "named": true
+        },
+        {
+          "type": "real",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "%=",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "&&",
+    "named": false
+  },
+  {
+    "type": "&&=",
+    "named": false
+  },
+  {
+    "type": "&=",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "**",
+    "named": false
+  },
+  {
+    "type": "**=",
+    "named": false
+  },
+  {
+    "type": "*=",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": "+=",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "-=",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "/=",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<<",
+    "named": false
+  },
+  {
+    "type": "<<=",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": ">>",
+    "named": false
+  },
+  {
+    "type": ">>=",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "^=",
+    "named": false
+  },
+  {
+    "type": "bool",
+    "named": false
+  },
+  {
+    "type": "brez",
+    "named": false
+  },
+  {
+    "type": "celo",
+    "named": false
+  },
+  {
+    "type": "celo",
+    "named": true
+  },
+  {
+    "type": "dokler",
+    "named": false
+  },
+  {
+    "type": "funkcija",
+    "named": false
+  },
+  {
+    "type": "ime",
+    "named": true
+  },
+  {
+    "type": "laž",
+    "named": false
+  },
+  {
+    "type": "naj",
+    "named": false
+  },
+  {
+    "type": "niz",
+    "named": true
+  },
+  {
+    "type": "real",
+    "named": true
+  },
+  {
+    "type": "real",
+    "named": false
+  },
+  {
+    "type": "resnica",
+    "named": false
+  },
+  {
+    "type": "vrni",
+    "named": false
+  },
+  {
+    "type": "znak",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "|=",
+    "named": false
+  },
+  {
+    "type": "||",
+    "named": false
+  },
+  {
+    "type": "||=",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  },
+  {
+    "type": "če",
+    "named": false
+  },
+  {
+    "type": "čene",
+    "named": false
+  }
+]
