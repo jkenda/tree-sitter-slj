@@ -160,8 +160,16 @@
           "value": "{"
         },
         {
-          "type": "SYMBOL",
-          "name": "zaporedje"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "zaporedje"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",

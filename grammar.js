@@ -25,7 +25,7 @@ module.exports = grammar({
         prirejanje: $ => seq($.ime, "=", $._izraz),
         kombinirano_prirejanje: $ => seq($.ime, $.prireditveni_op, $._izraz),
 
-        okvir: $ => seq("{", $.zaporedje, "}"),
+        okvir: $ => seq("{", optional($.zaporedje), "}"),
         pogojni_stavek: $ => seq("če", $.pogoj, $.okvir, optional(
             seq("čene", choice(
                 $.pogojni_stavek,

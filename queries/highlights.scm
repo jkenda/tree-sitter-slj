@@ -85,7 +85,7 @@
 
 (komentar) @comment
 (stevilo) @number
-(ime) @tag
+(ime) @variable
 (tip) @type
 (niz) @string
 
