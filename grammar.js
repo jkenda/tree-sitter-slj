@@ -3,42 +3,49 @@ module.exports = grammar({
 
     rules: {
         source_file: $ => repeat($._stavek),
-        zaporedje: $ => repeat1($._stavek),
+        _zaporedje: $ => repeat1($._stavek),
 
-        _stavek: $ => choice(
-            $.makro_funkcija,
-            $.inicializacija,
-            $.prirejanje,
-            $.kombinirano_prirejanje,
-            $.okvir,
-            $.pogojni_stavek,
-            $.zanka_dokler,
-            $.funkcija,
-            $.funkcijski_klic,
-            $.vrni,
-            $.komentar,
+        _stavek: $ => seq(
+            choice(
+                $.inicializacija,
+                $.prirejanje,
+                $.kombinirano_prirejanje,
+                $.okvir,
+                $.pogojni_stavek,
+                $.zanka_dokler,
+                $.funkcija,
+                $.funkcijski_klic,
+                $.makro_klic,
+                $.vrni,
+                $.komentar,
+            ),
+            optional(";"),
         ),
 
-        makro_funkcija: $ => seq($.ime, "!", "(", optional($.argumenti), ")"),
-
+        // prirejanje (naj x = 0; x = 1)
         inicializacija: $ => seq("naj", $.ime, "=", $._izraz),
         prirejanje: $ => seq($.ime, "=", $._izraz),
         kombinirano_prirejanje: $ => seq($.ime, $.prireditveni_op, $._izraz),
 
-        okvir: $ => seq("{", optional($.zaporedje), "}"),
-        pogojni_stavek: $ => seq("če", $.pogoj, $.okvir, optional(
+        okvir: $ => seq("{", optional($._zaporedje), "}"),
+
+        pogojni_stavek: $ => seq("če", $.pogoj, field("telo", $.okvir), optional(
             seq("čene", choice(
                 $.pogojni_stavek,
                 $.okvir,
             )),
         )),
+        pogoj: $ => $._izraz,
 
-        zanka_dokler: $ => seq("dokler", $.pogoj, $.okvir),
-        funkcija: $ => seq("funkcija", $.ime, "(", optional($.parametri), ")", optional(seq("->", $.tip, )), $.okvir),
-        funkcijski_klic: $ => seq($.ime, "(", optional($.argumenti), ")"),
+        zanka_dokler: $ => seq("dokler", $.pogoj, field("telo", $.okvir)),
+
+        funkcija: $ => seq("funkcija", $.ime, "(", optional($.parametri), ")", optional(seq("->", field("vrni", $.tip))), $.okvir),
+        parametri: $ => seq(repeat(seq($.parameter, ",")), $.parameter),
+        parameter: $ => seq($.ime, ":", $.tip),
         vrni: $ => seq("vrni", $._izraz),
 
-        pogoj: $ => $._izraz,
+        funkcijski_klic: $ => seq(field("funkcija", $.ime), "(", optional($.argumenti), ")"),
+        makro_klic: $ => seq(field("funkcija", $.ime), "!", "(", optional($.argumenti), ")"),
         argumenti: $ => seq(repeat(seq($._izraz, ",")), $._izraz),
 
         _izraz: $ => choice(
@@ -96,12 +103,11 @@ module.exports = grammar({
             "celo",
             "real",
             "znak",
-            seq("[", $.tip, ";", $._celo, "]"),
+            seq("[", $.tip, ";", $.velikost, "]"),
             seq("{", optional($.parametri), "}"),
             seq("@", $.tip),
         ),
-
-        parametri: $ => seq(repeat(seq($.ime, ":", $.tip, ",")), seq($.ime, ":", $.tip)),
+        velikost: $ => $._celo,
 
         prireditveni_op: _ => choice(
             "+=",

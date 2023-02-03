@@ -4,10 +4,12 @@
 
 (funkcija
     (ime) @local.definition
-    (parametri
-        (ime) @local.definition))
+) @local.scope
 
-(makro_funkcija
+(parameter
+  (ime) @local.definition)
+
+(makro_klic
     (ime) @local.reference)
 
 (funkcijski_klic

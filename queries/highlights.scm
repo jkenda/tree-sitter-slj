@@ -88,13 +88,15 @@
 (ime) @variable
 (tip) @type
 (niz) @string
+(velikost) @number
 
 (funkcija
-    (ime) @function
-    (parametri
-        (ime) @variable.parameter))
+    (ime) @function)
 
-(makro_funkcija
+(parameter
+    (ime) @variable.parameter)
+
+(makro_klic
     (ime) @function)
 
 (funkcijski_klic

@@ -29,7 +29,18 @@
   {
     "type": "funkcija",
     "named": true,
-    "fields": {},
+    "fields": {
+      "vrni": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "tip",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -45,10 +56,6 @@
         {
           "type": "parametri",
           "named": true
-        },
-        {
-          "type": "tip",
-          "named": true
         }
       ]
     }
@@ -56,17 +63,24 @@
   {
     "type": "funkcijski_klic",
     "named": true,
-    "fields": {},
+    "fields": {
+      "funkcija": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ime",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
         {
           "type": "argumenti",
-          "named": true
-        },
-        {
-          "type": "ime",
           "named": true
         }
       ]
@@ -131,19 +145,26 @@
     }
   },
   {
-    "type": "makro_funkcija",
+    "type": "makro_klic",
     "named": true,
-    "fields": {},
+    "fields": {
+      "funkcija": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ime",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
         {
           "type": "argumenti",
-          "named": true
-        },
-        {
-          "type": "ime",
           "named": true
         }
       ]
@@ -154,11 +175,70 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
-          "type": "zaporedje",
+          "type": "funkcija",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "inicializacija",
+          "named": true
+        },
+        {
+          "type": "kombinirano_prirejanje",
+          "named": true
+        },
+        {
+          "type": "komentar",
+          "named": true
+        },
+        {
+          "type": "makro_klic",
+          "named": true
+        },
+        {
+          "type": "okvir",
+          "named": true
+        },
+        {
+          "type": "pogojni_stavek",
+          "named": true
+        },
+        {
+          "type": "prirejanje",
+          "named": true
+        },
+        {
+          "type": "vrni",
+          "named": true
+        },
+        {
+          "type": "zanka_dokler",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "tip",
           "named": true
         }
       ]
@@ -173,11 +253,7 @@
       "required": true,
       "types": [
         {
-          "type": "ime",
-          "named": true
-        },
-        {
-          "type": "tip",
+          "type": "parameter",
           "named": true
         }
       ]
@@ -213,7 +289,18 @@
   {
     "type": "pogojni_stavek",
     "named": true,
-    "fields": {},
+    "fields": {
+      "telo": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "okvir",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -294,7 +381,7 @@
           "named": true
         },
         {
-          "type": "makro_funkcija",
+          "type": "makro_klic",
           "named": true
         },
         {
@@ -330,7 +417,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
@@ -340,9 +427,18 @@
         {
           "type": "tip",
           "named": true
+        },
+        {
+          "type": "velikost",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "velikost",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "vrni",
@@ -374,72 +470,24 @@
   {
     "type": "zanka_dokler",
     "named": true,
-    "fields": {},
+    "fields": {
+      "telo": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "okvir",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "okvir",
-          "named": true
-        },
         {
           "type": "pogoj",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "zaporedje",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "funkcija",
-          "named": true
-        },
-        {
-          "type": "funkcijski_klic",
-          "named": true
-        },
-        {
-          "type": "inicializacija",
-          "named": true
-        },
-        {
-          "type": "kombinirano_prirejanje",
-          "named": true
-        },
-        {
-          "type": "komentar",
-          "named": true
-        },
-        {
-          "type": "makro_funkcija",
-          "named": true
-        },
-        {
-          "type": "okvir",
-          "named": true
-        },
-        {
-          "type": "pogojni_stavek",
-          "named": true
-        },
-        {
-          "type": "prirejanje",
-          "named": true
-        },
-        {
-          "type": "vrni",
-          "named": true
-        },
-        {
-          "type": "zanka_dokler",
           "named": true
         }
       ]
