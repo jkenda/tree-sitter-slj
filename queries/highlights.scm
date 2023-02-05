@@ -9,11 +9,6 @@
 ] @keyword
 
 [
-     "resnica"
-     "laž"
- ] @constant.builtin
-
-[
      "brez"
      "bool"
      "celo"
@@ -81,6 +76,7 @@
 
 [
  "->"
+ "!"
  ] @punctuation.special
 
 (komentar) @comment
@@ -88,13 +84,14 @@
 (ime) @variable
 (tip) @type
 (niz) @string
+(bool) @constant.builtin
 (velikost) @number
 
 (funkcija
     (ime) @function)
 
 (parameter
-    (ime) @variable.parameter)
+    (ime)* @variable.parameter)
 
 (makro_klic
     (ime) @function)

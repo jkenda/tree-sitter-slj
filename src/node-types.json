@@ -5,8 +5,20 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
         {
           "type": "funkcijski_klic",
           "named": true
@@ -16,7 +28,15 @@
           "named": true
         },
         {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
           "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
           "named": true
         },
         {
@@ -27,9 +47,118 @@
     }
   },
   {
+    "type": "aritmeticni_izraz",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
+          "named": true
+        },
+        {
+          "type": "stevilo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bitni_izraz",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
+          "named": true
+        },
+        {
+          "type": "stevilo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bool",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "funkcija",
     "named": true,
     "fields": {
+      "telo": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "okvir",
+            "named": true
+          }
+        ]
+      },
       "vrni": {
         "multiple": false,
         "required": false,
@@ -47,10 +176,6 @@
       "types": [
         {
           "type": "ime",
-          "named": true
-        },
-        {
-          "type": "okvir",
           "named": true
         },
         {
@@ -95,6 +220,18 @@
       "required": true,
       "types": [
         {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -103,7 +240,15 @@
           "named": true
         },
         {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
           "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
           "named": true
         },
         {
@@ -114,13 +259,25 @@
     }
   },
   {
-    "type": "kombinirano_prirejanje",
+    "type": "logicni_izraz",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
         {
           "type": "funkcijski_klic",
           "named": true
@@ -130,11 +287,15 @@
           "named": true
         },
         {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
           "type": "niz",
           "named": true
         },
         {
-          "type": "prireditveni_op",
+          "type": "primerjalni_izraz",
           "named": true
         },
         {
@@ -188,10 +349,6 @@
         },
         {
           "type": "inicializacija",
-          "named": true
-        },
-        {
-          "type": "kombinirano_prirejanje",
           "named": true
         },
         {
@@ -260,33 +417,6 @@
     }
   },
   {
-    "type": "pogoj",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "funkcijski_klic",
-          "named": true
-        },
-        {
-          "type": "ime",
-          "named": true
-        },
-        {
-          "type": "niz",
-          "named": true
-        },
-        {
-          "type": "stevilo",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "pogojni_stavek",
     "named": true,
     "fields": {
@@ -306,15 +436,94 @@
       "required": true,
       "types": [
         {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
           "type": "okvir",
           "named": true
         },
         {
-          "type": "pogoj",
+          "type": "pogojni_stavek",
           "named": true
         },
         {
-          "type": "pogojni_stavek",
+          "type": "primerjalni_izraz",
+          "named": true
+        },
+        {
+          "type": "stevilo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "primerjalni_izraz",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
+          "named": true
+        },
+        {
+          "type": "stevilo",
           "named": true
         }
       ]
@@ -334,6 +543,18 @@
       "required": true,
       "types": [
         {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
           "type": "funkcijski_klic",
           "named": true
         },
@@ -342,7 +563,19 @@
           "named": true
         },
         {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
           "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
+          "named": true
+        },
+        {
+          "type": "prireditveni_op",
           "named": true
         },
         {
@@ -370,10 +603,6 @@
         },
         {
           "type": "inicializacija",
-          "named": true
-        },
-        {
-          "type": "kombinirano_prirejanje",
           "named": true
         },
         {
@@ -445,9 +674,21 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
+        {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
         {
           "type": "funkcijski_klic",
           "named": true
@@ -457,7 +698,15 @@
           "named": true
         },
         {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
           "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
           "named": true
         },
         {
@@ -487,7 +736,39 @@
       "required": true,
       "types": [
         {
-          "type": "pogoj",
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
+          "named": true
+        },
+        {
+          "type": "stevilo",
           "named": true
         }
       ]
