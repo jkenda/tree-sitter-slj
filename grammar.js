@@ -12,41 +12,72 @@ module.exports = grammar({
                 $.okvir,
                 $.pogojni_stavek,
                 $.zanka_dokler,
+                $.zanka_za,
                 $.funkcija,
                 $.funkcijski_klic,
                 $.makro_klic,
                 $.vrni,
+                $.prekini,
                 $.komentar,
             ),
             optional(/[;\n]+/),
         ),
 
-        // prirejanje (naj x = 0; x = 1)
+        // naj x = 0
         inicializacija: $ => seq("naj", $.ime, "=", $._izraz),
+
+        // x = 0; x += 1; x -= 1 ...
         prirejanje: $ => seq($.ime, $.prireditveni_op, $._izraz),
 
+        // { ... }
         okvir: $ => seq("{", optional($._zaporedje), "}"),
 
-        pogojni_stavek: $ => seq("če", $._izraz, field("telo", $.okvir), optional(
+        // če x < 2 { ... }
+        pogojni_stavek: $ => seq("če", field("pogoj", $._izraz), field("telo", $.okvir), optional(
             seq("čene", choice(
                 $.pogojni_stavek,
                 $.okvir,
             )),
         )),
 
-        zanka_dokler: $ => seq("dokler", $._izraz, field("telo", $.okvir)),
+        // dokler x < 2 { x += 1 }
+        zanka_dokler: $ => seq("dokler", field("pogoj", $._izraz), field("telo", $.okvir)),
+        zanka_za:     $ => seq("za", choice(
+            // za i = 0; i < 3; { ... }
+            seq($.prirejanje, ";", $.primerjalni_izraz, ";", $._stavek, field("telo", $.okvir)),
 
+            // za i v intervalu [5, MEJA] +2 { ... }
+            seq($.ime, "v", "intervalu", $.interval, field("telo", $.okvir)),
+        )),
+
+        // [2, 3]; [2, 3); (2, 3]; (2, 3); [2, 3) +3
+        interval: $ => seq(choice("[", "("), $._izraz, ",", $._izraz, choice("]", ")"), 
+            optional(seq(choice("+", "-", "*", "/", "**"), $._izraz))
+        ),
+
+        // funkcija f(x: real) -> celo { ... }; funkcija g(x: celo) { ... }
         funkcija: $ => seq("funkcija", $.ime, 
             "(", optional($.parametri), ")", 
             optional(seq("->", field("vrni", $.tip))), 
             field("telo", $.okvir)
         ),
+
+        // x: celo, y: znak
         parametri: $ => seq(repeat(seq($.parameter, ",")), $.parameter),
         parameter: $ => seq($.ime, ":", $.tip),
+
+        prekini: _ => "prekini",
+
+        // vrni x**2
         vrni: $ => seq("vrni", $._izraz),
 
+        // f(2.0)
         funkcijski_klic: $ => seq(field("funkcija", $.ime), "(", optional($.argumenti), ")"),
+
+        // g!(2, 'a')
         makro_klic: $ => seq(field("funkcija", $.ime), "!", "(", optional($.argumenti), ")"),
+
+        // x+3, 12, n*R*T / V
         argumenti: $ => seq(repeat(seq($._izraz, ",")), $._izraz),
 
         _izraz: $ => choice(

@@ -1,0 +1,26 @@
+==================
+Prazen okvir
+==================
+
+{}
+
+---
+
+(source_file
+    (okvir))
+
+==================
+Stavek v okvirju
+==================
+
+{
+    naj x = 42
+}
+
+---
+
+(source_file
+    (okvir
+        (inicializacija
+            (ime)
+            (stevilo))))

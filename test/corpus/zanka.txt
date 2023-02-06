@@ -1,0 +1,68 @@
+==================
+Dokler
+==================
+
+dokler resnica {}
+
+---
+
+(source_file
+    (zanka_dokler
+        pogoj: (bool)
+        telo: (okvir)))
+
+==================
+Za - navadna
+==================
+
+za i = 0; i < 5; i += 1 {}
+
+---
+
+(source_file
+    (zanka_za
+        (prirejanje
+            (ime)
+            (prireditveni_op)
+            (stevilo))
+        (primerjalni_izraz
+            (ime)
+            (stevilo))
+        (prirejanje
+            (ime)
+            (prireditveni_op)
+            (stevilo))
+        telo: (okvir)))
+
+==================
+Za - intervalska
+==================
+
+za a v intervalu [0, 265) {}
+
+---
+
+(source_file
+    (zanka_za
+        (ime)
+        (interval
+            (stevilo)
+            (stevilo))
+        telo: (okvir)))
+
+==================
+Prekini
+==================
+
+dokler resnica {
+    prekini
+}
+
+---
+
+(source_file
+    (zanka_dokler
+        pogoj: (bool)
+        telo: (okvir
+            (prekini))))
+

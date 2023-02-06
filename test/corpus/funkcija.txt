@@ -1,0 +1,55 @@
+==================
+Brez tipa
+==================
+
+funkcija f(a: celo, b: bool) {}
+
+---
+
+(source_file
+    (funkcija
+        (ime)
+        (parametri
+            (parameter
+                (ime)
+                (tip))
+            (parameter
+                (ime)
+                (tip)))
+        telo: (okvir)))
+
+==================
+S tipom
+==================
+
+funkcija g(a: celo, b: bool) -> real {}
+
+---
+
+(source_file
+    (funkcija
+        (ime)
+        (parametri
+            (parameter
+                (ime)
+                (tip))
+            (parameter
+                (ime)
+                (tip)))
+        vrni: (tip)
+        telo: (okvir)))
+
+==================
+Vrni
+==================
+
+vrni i + 1
+
+---
+
+(source_file
+    (vrni
+        (aritmeticni_izraz
+            (ime)
+            (stevilo))))
+

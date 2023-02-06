@@ -4,6 +4,9 @@
     "če"
     "čene"
     "dokler"
+    "za"
+    "v"
+    "intervalu"
     "funkcija"
     "vrni"
 ] @keyword
@@ -86,6 +89,7 @@
 (niz) @string
 (bool) @constant.builtin
 (velikost) @number
+(prekini) @keyword
 
 (funkcija
     (ime) @function)

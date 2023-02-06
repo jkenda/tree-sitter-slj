@@ -259,6 +259,53 @@
     }
   },
   {
+    "type": "interval",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "aritmeticni_izraz",
+          "named": true
+        },
+        {
+          "type": "bitni_izraz",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "funkcijski_klic",
+          "named": true
+        },
+        {
+          "type": "ime",
+          "named": true
+        },
+        {
+          "type": "logicni_izraz",
+          "named": true
+        },
+        {
+          "type": "niz",
+          "named": true
+        },
+        {
+          "type": "primerjalni_izraz",
+          "named": true
+        },
+        {
+          "type": "stevilo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "logicni_izraz",
     "named": true,
     "fields": {},
@@ -368,6 +415,10 @@
           "named": true
         },
         {
+          "type": "prekini",
+          "named": true
+        },
+        {
           "type": "prirejanje",
           "named": true
         },
@@ -377,6 +428,10 @@
         },
         {
           "type": "zanka_dokler",
+          "named": true
+        },
+        {
+          "type": "zanka_za",
           "named": true
         }
       ]
@@ -420,6 +475,60 @@
     "type": "pogojni_stavek",
     "named": true,
     "fields": {
+      "pogoj": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "aritmeticni_izraz",
+            "named": true
+          },
+          {
+            "type": "bitni_izraz",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "funkcijski_klic",
+            "named": true
+          },
+          {
+            "type": "ime",
+            "named": true
+          },
+          {
+            "type": "logicni_izraz",
+            "named": true
+          },
+          {
+            "type": "niz",
+            "named": true
+          },
+          {
+            "type": "primerjalni_izraz",
+            "named": true
+          },
+          {
+            "type": "stevilo",
+            "named": true
+          }
+        ]
+      },
       "telo": {
         "multiple": false,
         "required": true,
@@ -432,51 +541,15 @@
       }
     },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
-        {
-          "type": "aritmeticni_izraz",
-          "named": true
-        },
-        {
-          "type": "bitni_izraz",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "funkcijski_klic",
-          "named": true
-        },
-        {
-          "type": "ime",
-          "named": true
-        },
-        {
-          "type": "logicni_izraz",
-          "named": true
-        },
-        {
-          "type": "niz",
-          "named": true
-        },
         {
           "type": "okvir",
           "named": true
         },
         {
           "type": "pogojni_stavek",
-          "named": true
-        },
-        {
-          "type": "primerjalni_izraz",
-          "named": true
-        },
-        {
-          "type": "stevilo",
           "named": true
         }
       ]
@@ -622,6 +695,10 @@
           "named": true
         },
         {
+          "type": "prekini",
+          "named": true
+        },
+        {
           "type": "prirejanje",
           "named": true
         },
@@ -631,6 +708,10 @@
         },
         {
           "type": "zanka_dokler",
+          "named": true
+        },
+        {
+          "type": "zanka_za",
           "named": true
         }
       ]
@@ -720,6 +801,76 @@
     "type": "zanka_dokler",
     "named": true,
     "fields": {
+      "pogoj": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "aritmeticni_izraz",
+            "named": true
+          },
+          {
+            "type": "bitni_izraz",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "funkcijski_klic",
+            "named": true
+          },
+          {
+            "type": "ime",
+            "named": true
+          },
+          {
+            "type": "logicni_izraz",
+            "named": true
+          },
+          {
+            "type": "niz",
+            "named": true
+          },
+          {
+            "type": "primerjalni_izraz",
+            "named": true
+          },
+          {
+            "type": "stevilo",
+            "named": true
+          }
+        ]
+      },
+      "telo": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "okvir",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "zanka_za",
+    "named": true,
+    "fields": {
       "telo": {
         "multiple": false,
         "required": true,
@@ -732,19 +883,11 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "aritmeticni_izraz",
-          "named": true
-        },
-        {
-          "type": "bitni_izraz",
-          "named": true
-        },
-        {
-          "type": "bool",
+          "type": "funkcija",
           "named": true
         },
         {
@@ -756,11 +899,31 @@
           "named": true
         },
         {
-          "type": "logicni_izraz",
+          "type": "inicializacija",
           "named": true
         },
         {
-          "type": "niz",
+          "type": "interval",
+          "named": true
+        },
+        {
+          "type": "komentar",
+          "named": true
+        },
+        {
+          "type": "makro_klic",
+          "named": true
+        },
+        {
+          "type": "okvir",
+          "named": true
+        },
+        {
+          "type": "pogojni_stavek",
+          "named": true
+        },
+        {
+          "type": "prekini",
           "named": true
         },
         {
@@ -768,7 +931,19 @@
           "named": true
         },
         {
-          "type": "stevilo",
+          "type": "prirejanje",
+          "named": true
+        },
+        {
+          "type": "vrni",
+          "named": true
+        },
+        {
+          "type": "zanka_dokler",
+          "named": true
+        },
+        {
+          "type": "zanka_za",
           "named": true
         }
       ]
@@ -955,6 +1130,10 @@
     "named": true
   },
   {
+    "type": "intervalu",
+    "named": false
+  },
+  {
     "type": "komentar",
     "named": true
   },
@@ -971,6 +1150,10 @@
     "named": true
   },
   {
+    "type": "prekini",
+    "named": true
+  },
+  {
     "type": "real",
     "named": false
   },
@@ -979,7 +1162,15 @@
     "named": false
   },
   {
+    "type": "v",
+    "named": false
+  },
+  {
     "type": "vrni",
+    "named": false
+  },
+  {
+    "type": "za",
     "named": false
   },
   {

@@ -1,0 +1,38 @@
+==================
+Inicializacija
+==================
+
+naj čebelica = 1
+
+---
+
+(source_file
+    (inicializacija
+        (ime)
+        (stevilo)))
+
+==================
+Prirejanje
+==================
+
+x = 13
+
+---
+
+(source_file
+    (prirejanje
+        (ime)
+        (prireditveni_op)
+        (stevilo)))
+
+==================
+Komentar
+==================
+
+# komentar
+
+---
+
+(source_file
+    (komentar))
+

@@ -1,0 +1,14 @@
+==================
+S praznim okvirjem
+==================
+
+če x < 2 {}
+
+---
+
+(source_file
+    (pogojni_stavek
+        pogoj: (primerjalni_izraz
+            (ime)
+            (stevilo))
+        telo: (okvir)))

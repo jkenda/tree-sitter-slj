@@ -43,6 +43,10 @@
             },
             {
               "type": "SYMBOL",
+              "name": "zanka_za"
+            },
+            {
+              "type": "SYMBOL",
               "name": "funkcija"
             },
             {
@@ -56,6 +60,10 @@
             {
               "type": "SYMBOL",
               "name": "vrni"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "prekini"
             },
             {
               "type": "SYMBOL",
@@ -148,8 +156,12 @@
           "value": "če"
         },
         {
-          "type": "SYMBOL",
-          "name": "_izraz"
+          "type": "FIELD",
+          "name": "pogoj",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_izraz"
+          }
         },
         {
           "type": "FIELD",
@@ -199,8 +211,12 @@
           "value": "dokler"
         },
         {
-          "type": "SYMBOL",
-          "name": "_izraz"
+          "type": "FIELD",
+          "name": "pogoj",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_izraz"
+          }
         },
         {
           "type": "FIELD",
@@ -209,6 +225,167 @@
             "type": "SYMBOL",
             "name": "okvir"
           }
+        }
+      ]
+    },
+    "zanka_za": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "za"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "prirejanje"
+                },
+                {
+                  "type": "STRING",
+                  "value": ";"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "primerjalni_izraz"
+                },
+                {
+                  "type": "STRING",
+                  "value": ";"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_stavek"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "telo",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "okvir"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "ime"
+                },
+                {
+                  "type": "STRING",
+                  "value": "v"
+                },
+                {
+                  "type": "STRING",
+                  "value": "intervalu"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "interval"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "telo",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "okvir"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "interval": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "["
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_izraz"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_izraz"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "]"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "+"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "-"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "*"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "/"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "**"
+                    }
+                  ]
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_izraz"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -319,6 +496,10 @@
           "name": "tip"
         }
       ]
+    },
+    "prekini": {
+      "type": "STRING",
+      "value": "prekini"
     },
     "vrni": {
       "type": "SEQ",
