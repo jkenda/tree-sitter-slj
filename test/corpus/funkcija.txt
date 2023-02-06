@@ -6,7 +6,7 @@ funkcija f(a: celo, b: bool) {}
 
 ---
 
-(source_file
+(datoteka
     (funkcija
         (ime)
         (parametri
@@ -26,7 +26,7 @@ funkcija g(a: celo, b: bool) -> real {}
 
 ---
 
-(source_file
+(datoteka
     (funkcija
         (ime)
         (parametri
@@ -47,7 +47,7 @@ vrni i + 1
 
 ---
 
-(source_file
+(datoteka
     (vrni
         (aritmeticni_izraz
             (ime)

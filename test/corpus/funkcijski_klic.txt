@@ -6,7 +6,7 @@ naj i = init()
 
 ---
 
-(source_file
+(datoteka
     (inicializacija
         (ime)
         (funkcijski_klic
@@ -20,7 +20,7 @@ naj i = korak(x, x + 1)
 
 ---
 
-(source_file
+(datoteka
     (inicializacija
         (ime)
         (funkcijski_klic
@@ -39,7 +39,7 @@ natisni!("pi ≃ ", 3.14, " +- ", abs(PI - 3.14))
 
 ---
 
-(source_file
+(datoteka
     (makro_klic
         funkcija: (ime)
         (argumenti

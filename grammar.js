@@ -2,7 +2,7 @@ module.exports = grammar({
     name: 'slj',
 
     rules: {
-        source_file: $ => repeat($._stavek),
+        datoteka: $ => repeat($._stavek),
         _zaporedje: $ => repeat1($._stavek),
 
         _stavek: $ => seq(

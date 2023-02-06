@@ -6,7 +6,7 @@ Prazen okvir
 
 ---
 
-(source_file
+(datoteka
     (okvir))
 
 ==================
@@ -19,7 +19,7 @@ Stavek v okvirju
 
 ---
 
-(source_file
+(datoteka
     (okvir
         (inicializacija
             (ime)

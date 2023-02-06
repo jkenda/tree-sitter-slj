@@ -6,7 +6,7 @@ S praznim okvirjem
 
 ---
 
-(source_file
+(datoteka
     (pogojni_stavek
         pogoj: (primerjalni_izraz
             (ime)

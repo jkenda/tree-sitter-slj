@@ -6,7 +6,7 @@ dokler resnica {}
 
 ---
 
-(source_file
+(datoteka
     (zanka_dokler
         pogoj: (bool)
         telo: (okvir)))
@@ -19,7 +19,7 @@ za i = 0; i < 5; i += 1 {}
 
 ---
 
-(source_file
+(datoteka
     (zanka_za
         (prirejanje
             (ime)
@@ -42,7 +42,7 @@ za a v intervalu [0, 265) {}
 
 ---
 
-(source_file
+(datoteka
     (zanka_za
         (ime)
         (interval
@@ -60,7 +60,7 @@ dokler resnica {
 
 ---
 
-(source_file
+(datoteka
     (zanka_dokler
         pogoj: (bool)
         telo: (okvir

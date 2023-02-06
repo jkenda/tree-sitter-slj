@@ -1,7 +1,7 @@
 {
   "name": "slj",
   "rules": {
-    "source_file": {
+    "datoteka": {
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",

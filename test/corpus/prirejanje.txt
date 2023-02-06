@@ -6,7 +6,7 @@ naj čebelica = 1
 
 ---
 
-(source_file
+(datoteka
     (inicializacija
         (ime)
         (stevilo)))
@@ -19,7 +19,7 @@ x = 13
 
 ---
 
-(source_file
+(datoteka
     (prirejanje
         (ime)
         (prireditveni_op)
@@ -33,6 +33,6 @@ Komentar
 
 ---
 
-(source_file
+(datoteka
     (komentar))
 
