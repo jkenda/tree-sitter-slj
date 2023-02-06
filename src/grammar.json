@@ -242,24 +242,36 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "prirejanje"
+                  "type": "FIELD",
+                  "name": "inicializacija",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "prirejanje"
+                  }
                 },
                 {
                   "type": "STRING",
                   "value": ";"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "primerjalni_izraz"
+                  "type": "FIELD",
+                  "name": "pogoj",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "primerjalni_izraz"
+                  }
                 },
                 {
                   "type": "STRING",
                   "value": ";"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "_stavek"
+                  "type": "FIELD",
+                  "name": "korak",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_stavek"
+                  }
                 },
                 {
                   "type": "FIELD",
@@ -275,8 +287,12 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "ime"
+                  "type": "FIELD",
+                  "name": "spremenljivka",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "ime"
+                  }
                 },
                 {
                   "type": "STRING",
@@ -287,8 +303,12 @@
                   "value": "intervalu"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "interval"
+                  "type": "FIELD",
+                  "name": "interval",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "interval"
+                  }
                 },
                 {
                   "type": "FIELD",
@@ -397,24 +417,32 @@
           "value": "funkcija"
         },
         {
-          "type": "SYMBOL",
-          "name": "ime"
+          "type": "FIELD",
+          "name": "ime",
+          "content": {
+            "type": "SYMBOL",
+            "name": "ime"
+          }
         },
         {
           "type": "STRING",
           "value": "("
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "parametri"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "FIELD",
+          "name": "parametri",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "parametri"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         },
         {
           "type": "STRING",
@@ -530,16 +558,20 @@
           "value": "("
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "argumenti"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "FIELD",
+          "name": "argumenti",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "argumenti"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         },
         {
           "type": "STRING",
@@ -567,16 +599,20 @@
           "value": "("
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "argumenti"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "FIELD",
+          "name": "argumenti",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "argumenti"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         },
         {
           "type": "STRING",

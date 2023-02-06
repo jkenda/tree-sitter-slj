@@ -25,7 +25,7 @@ naj i = korak(x, x + 1)
         (ime)
         (funkcijski_klic
             funkcija: (ime)
-            (argumenti
+            argumenti: (argumenti
                 (ime)
                 (aritmeticni_izraz
                     (ime)
@@ -42,13 +42,13 @@ natisni!("pi ≃ ", 3.14, " +- ", abs(PI - 3.14))
 (datoteka
     (makro_klic
         funkcija: (ime)
-        (argumenti
+        argumenti: (argumenti
             (niz)
             (stevilo)
             (niz)
             (funkcijski_klic
                 funkcija: (ime)
-                (argumenti
+                argumenti: (argumenti
                     (aritmeticni_izraz
                         (ime)
                         (stevilo)))))))

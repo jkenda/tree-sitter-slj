@@ -21,14 +21,14 @@ za i = 0; i < 5; i += 1 {}
 
 (datoteka
     (zanka_za
-        (prirejanje
+        inicializacija: (prirejanje
             (ime)
             (prireditveni_op)
             (stevilo))
-        (primerjalni_izraz
+        pogoj: (primerjalni_izraz
             (ime)
             (stevilo))
-        (prirejanje
+        korak: (prirejanje
             (ime)
             (prireditveni_op)
             (stevilo))
@@ -44,8 +44,8 @@ za a v intervalu [0, 265) {}
 
 (datoteka
     (zanka_za
-        (ime)
-        (interval
+        spremenljivka: (ime)
+        interval: (interval
             (stevilo)
             (stevilo))
         telo: (okvir)))

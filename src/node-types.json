@@ -208,6 +208,26 @@
     "type": "funkcija",
     "named": true,
     "fields": {
+      "ime": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ime",
+            "named": true
+          }
+        ]
+      },
+      "parametri": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "parametri",
+            "named": true
+          }
+        ]
+      },
       "telo": {
         "multiple": false,
         "required": true,
@@ -228,26 +248,22 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "ime",
-          "named": true
-        },
-        {
-          "type": "parametri",
-          "named": true
-        }
-      ]
     }
   },
   {
     "type": "funkcijski_klic",
     "named": true,
     "fields": {
+      "argumenti": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "argumenti",
+            "named": true
+          }
+        ]
+      },
       "funkcija": {
         "multiple": false,
         "required": true,
@@ -258,16 +274,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "argumenti",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -415,6 +421,16 @@
     "type": "makro_klic",
     "named": true,
     "fields": {
+      "argumenti": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "argumenti",
+            "named": true
+          }
+        ]
+      },
       "funkcija": {
         "multiple": false,
         "required": true,
@@ -425,16 +441,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "argumenti",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -871,6 +877,100 @@
     "type": "zanka_za",
     "named": true,
     "fields": {
+      "inicializacija": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "prirejanje",
+            "named": true
+          }
+        ]
+      },
+      "interval": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "interval",
+            "named": true
+          }
+        ]
+      },
+      "korak": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "funkcija",
+            "named": true
+          },
+          {
+            "type": "funkcijski_klic",
+            "named": true
+          },
+          {
+            "type": "inicializacija",
+            "named": true
+          },
+          {
+            "type": "komentar",
+            "named": true
+          },
+          {
+            "type": "makro_klic",
+            "named": true
+          },
+          {
+            "type": "okvir",
+            "named": true
+          },
+          {
+            "type": "pogojni_stavek",
+            "named": true
+          },
+          {
+            "type": "prekini",
+            "named": true
+          },
+          {
+            "type": "prirejanje",
+            "named": true
+          },
+          {
+            "type": "vrni",
+            "named": true
+          },
+          {
+            "type": "zanka_dokler",
+            "named": true
+          },
+          {
+            "type": "zanka_za",
+            "named": true
+          }
+        ]
+      },
+      "pogoj": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "primerjalni_izraz",
+            "named": true
+          }
+        ]
+      },
+      "spremenljivka": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "ime",
+            "named": true
+          }
+        ]
+      },
       "telo": {
         "multiple": false,
         "required": true,
@@ -881,72 +981,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "funkcija",
-          "named": true
-        },
-        {
-          "type": "funkcijski_klic",
-          "named": true
-        },
-        {
-          "type": "ime",
-          "named": true
-        },
-        {
-          "type": "inicializacija",
-          "named": true
-        },
-        {
-          "type": "interval",
-          "named": true
-        },
-        {
-          "type": "komentar",
-          "named": true
-        },
-        {
-          "type": "makro_klic",
-          "named": true
-        },
-        {
-          "type": "okvir",
-          "named": true
-        },
-        {
-          "type": "pogojni_stavek",
-          "named": true
-        },
-        {
-          "type": "prekini",
-          "named": true
-        },
-        {
-          "type": "primerjalni_izraz",
-          "named": true
-        },
-        {
-          "type": "prirejanje",
-          "named": true
-        },
-        {
-          "type": "vrni",
-          "named": true
-        },
-        {
-          "type": "zanka_dokler",
-          "named": true
-        },
-        {
-          "type": "zanka_za",
-          "named": true
-        }
-      ]
     }
   },
   {

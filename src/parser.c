@@ -12,9 +12,9 @@
 #define ALIAS_COUNT 0
 #define TOKEN_COUNT 69
 #define EXTERNAL_TOKEN_COUNT 0
-#define FIELD_COUNT 4
+#define FIELD_COUNT 11
 #define MAX_ALIAS_SEQUENCE_LENGTH 8
-#define PRODUCTION_ID_COUNT 8
+#define PRODUCTION_ID_COUNT 11
 
 enum {
   aux_sym__stavek_token1 = 1,
@@ -728,16 +728,30 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
 };
 
 enum {
-  field_funkcija = 1,
-  field_pogoj = 2,
-  field_telo = 3,
-  field_vrni = 4,
+  field_argumenti = 1,
+  field_funkcija = 2,
+  field_ime = 3,
+  field_inicializacija = 4,
+  field_interval = 5,
+  field_korak = 6,
+  field_parametri = 7,
+  field_pogoj = 8,
+  field_spremenljivka = 9,
+  field_telo = 10,
+  field_vrni = 11,
 };
 
 static const char * const ts_field_names[] = {
   [0] = NULL,
+  [field_argumenti] = "argumenti",
   [field_funkcija] = "funkcija",
+  [field_ime] = "ime",
+  [field_inicializacija] = "inicializacija",
+  [field_interval] = "interval",
+  [field_korak] = "korak",
+  [field_parametri] = "parametri",
   [field_pogoj] = "pogoj",
+  [field_spremenljivka] = "spremenljivka",
   [field_telo] = "telo",
   [field_vrni] = "vrni",
 };
@@ -745,11 +759,14 @@ static const char * const ts_field_names[] = {
 static const TSFieldMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
   [1] = {.index = 0, .length = 2},
   [2] = {.index = 2, .length = 1},
-  [3] = {.index = 3, .length = 1},
-  [4] = {.index = 4, .length = 1},
-  [5] = {.index = 5, .length = 1},
-  [6] = {.index = 6, .length = 2},
-  [7] = {.index = 8, .length = 2},
+  [3] = {.index = 3, .length = 2},
+  [4] = {.index = 5, .length = 2},
+  [5] = {.index = 7, .length = 2},
+  [6] = {.index = 9, .length = 3},
+  [7] = {.index = 12, .length = 3},
+  [8] = {.index = 15, .length = 4},
+  [9] = {.index = 19, .length = 3},
+  [10] = {.index = 22, .length = 4},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
@@ -759,15 +776,34 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [2] =
     {field_funkcija, 0},
   [3] =
-    {field_telo, 4},
-  [4] =
-    {field_telo, 5},
+    {field_argumenti, 2},
+    {field_funkcija, 0},
   [5] =
+    {field_ime, 1},
+    {field_telo, 4},
+  [7] =
+    {field_argumenti, 3},
+    {field_funkcija, 0},
+  [9] =
+    {field_interval, 4},
+    {field_spremenljivka, 1},
+    {field_telo, 5},
+  [12] =
+    {field_ime, 1},
+    {field_parametri, 3},
+    {field_telo, 5},
+  [15] =
+    {field_inicializacija, 1},
+    {field_korak, 5},
+    {field_pogoj, 3},
     {field_telo, 6},
-  [6] =
+  [19] =
+    {field_ime, 1},
     {field_telo, 6},
     {field_vrni, 5},
-  [8] =
+  [22] =
+    {field_ime, 1},
+    {field_parametri, 3},
     {field_telo, 7},
     {field_vrni, 6},
 };
@@ -11787,8 +11823,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [103] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_aritmeticni_izraz, 2),
   [105] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_bool, 1),
   [107] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_bool, 1),
-  [109] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcijski_klic, 4, .production_id = 2),
-  [111] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcijski_klic, 4, .production_id = 2),
+  [109] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcijski_klic, 4, .production_id = 3),
+  [111] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcijski_klic, 4, .production_id = 3),
   [113] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_stevilo, 1),
   [115] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_stevilo, 1),
   [117] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_vrni, 2),
@@ -12002,20 +12038,20 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [562] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pogojni_stavek, 5, .production_id = 1),
   [564] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zanka_dokler, 3, .production_id = 1),
   [566] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zanka_dokler, 3, .production_id = 1),
-  [568] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcija, 5, .production_id = 3),
-  [570] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcija, 5, .production_id = 3),
-  [572] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_makro_klic, 5, .production_id = 2),
-  [574] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_makro_klic, 5, .production_id = 2),
-  [576] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zanka_za, 6, .production_id = 4),
-  [578] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zanka_za, 6, .production_id = 4),
-  [580] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcija, 6, .production_id = 4),
-  [582] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcija, 6, .production_id = 4),
-  [584] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zanka_za, 7, .production_id = 5),
-  [586] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zanka_za, 7, .production_id = 5),
-  [588] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcija, 7, .production_id = 6),
-  [590] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcija, 7, .production_id = 6),
-  [592] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcija, 8, .production_id = 7),
-  [594] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcija, 8, .production_id = 7),
+  [568] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcija, 5, .production_id = 4),
+  [570] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcija, 5, .production_id = 4),
+  [572] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_makro_klic, 5, .production_id = 5),
+  [574] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_makro_klic, 5, .production_id = 5),
+  [576] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zanka_za, 6, .production_id = 6),
+  [578] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zanka_za, 6, .production_id = 6),
+  [580] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcija, 6, .production_id = 7),
+  [582] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcija, 6, .production_id = 7),
+  [584] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_zanka_za, 7, .production_id = 8),
+  [586] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_zanka_za, 7, .production_id = 8),
+  [588] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcija, 7, .production_id = 9),
+  [590] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcija, 7, .production_id = 9),
+  [592] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_funkcija, 8, .production_id = 10),
+  [594] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_funkcija, 8, .production_id = 10),
   [596] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stavek, 1),
   [598] = {.entry = {.count = 1, .reusable = true}}, SHIFT(209),
   [600] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__stavek, 1),

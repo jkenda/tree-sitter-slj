@@ -44,10 +44,12 @@ module.exports = grammar({
         zanka_dokler: $ => seq("dokler", field("pogoj", $._izraz), field("telo", $.okvir)),
         zanka_za:     $ => seq("za", choice(
             // za i = 0; i < 3; { ... }
-            seq($.prirejanje, ";", $.primerjalni_izraz, ";", $._stavek, field("telo", $.okvir)),
+            seq(field("inicializacija", $.prirejanje), ";",
+                field("pogoj", $.primerjalni_izraz), ";",
+                field("korak", $._stavek), field("telo", $.okvir)),
 
             // za i v intervalu [5, MEJA] +2 { ... }
-            seq($.ime, "v", "intervalu", $.interval, field("telo", $.okvir)),
+            seq(field("spremenljivka", $.ime), "v", "intervalu", field("interval", $.interval), field("telo", $.okvir)),
         )),
 
         // [2, 3]; [2, 3); (2, 3]; (2, 3); [2, 3) +3
@@ -56,8 +58,8 @@ module.exports = grammar({
         ),
 
         // funkcija f(x: real) -> celo { ... }; funkcija g(x: celo) { ... }
-        funkcija: $ => seq("funkcija", $.ime, 
-            "(", optional($.parametri), ")", 
+        funkcija: $ => seq("funkcija", field("ime", $.ime), 
+            "(", field("parametri", optional($.parametri)), ")", 
             optional(seq("->", field("vrni", $.tip))), 
             field("telo", $.okvir)
         ),
@@ -72,10 +74,10 @@ module.exports = grammar({
         vrni: $ => seq("vrni", $._izraz),
 
         // f(2.0)
-        funkcijski_klic: $ => seq(field("funkcija", $.ime), "(", optional($.argumenti), ")"),
+        funkcijski_klic: $ => seq(field("funkcija", $.ime), "(", field("argumenti", optional($.argumenti)), ")"),
 
         // g!(2, 'a')
-        makro_klic: $ => seq(field("funkcija", $.ime), "!", "(", optional($.argumenti), ")"),
+        makro_klic: $ => seq(field("funkcija", $.ime), "!", "(", field("argumenti", optional($.argumenti)), ")"),
 
         // x+3, 12, n*R*T / V
         argumenti: $ => seq(repeat(seq($._izraz, ",")), $._izraz),

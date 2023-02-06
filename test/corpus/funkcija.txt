@@ -8,8 +8,8 @@ funkcija f(a: celo, b: bool) {}
 
 (datoteka
     (funkcija
-        (ime)
-        (parametri
+        ime: (ime)
+        parametri: (parametri
             (parameter
                 (ime)
                 (tip))
@@ -28,8 +28,8 @@ funkcija g(a: celo, b: bool) -> real {}
 
 (datoteka
     (funkcija
-        (ime)
-        (parametri
+        ime: (ime)
+        parametri: (parametri
             (parameter
                 (ime)
                 (tip))
