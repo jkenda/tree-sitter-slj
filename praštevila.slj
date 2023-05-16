@@ -3,7 +3,7 @@ funkcija je_deljivo(deljenec: celo, delitelj: celo) -> bool {
 }
 
 funkcija je_praštevilo(kandidat: celo) -> bool {
-    naj praštevilo = resnica
+    naj praštevilo = resnica kot bool
 
     za i v intervalu [2, kandidat / 2] {
         če je_deljivo(kandidat, i) {

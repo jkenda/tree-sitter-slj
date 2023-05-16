@@ -7,27 +7,45 @@ module.exports = grammar({
 
         _stavek: $ => seq(
             choice(
+                $.multifunkcijski_klic,
+                $.funkcijski_klic,
+                $.deklaracija,
                 $.inicializacija,
+                $.prirejanje_referenci,
                 $.prirejanje,
+                $.prirejanje_seznamu,
                 $.okvir,
                 $.pogojni_stavek,
                 $.zanka_dokler,
                 $.zanka_za,
                 $.funkcija,
-                $.funkcijski_klic,
-                $.makro_klic,
                 $.vrni,
                 $.prekini,
                 $.komentar,
             ),
-            optional(/[;\n]+/),
+            optional(";"),
         ),
+
+        // g!(2, 'a')
+        multifunkcijski_klic: $ => seq(field("funkcija", $.ime), "!", "(", field("argumenti", optional($.argumenti)), ")"),
+
+        // f(2.0)
+        funkcijski_klic: $ => seq(field("funkcija", $.ime), "(", field("argumenti", optional($.argumenti)), ")"),
+
+        // naj x: [real; 3]
+        deklaracija: $ => seq("naj", $.ime, ":", $.tip),
 
         // naj x = 0
         inicializacija: $ => seq("naj", $.ime, "=", $._izraz),
 
+        // x@ = 123; x@ += 2; x@ -= 1
+        prirejanje_referenci: $ => seq($.ime, "@", $.prireditveni_op, $._izraz),
+
         // x = 0; x += 1; x -= 1 ...
         prirejanje: $ => seq($.ime, $.prireditveni_op, $._izraz),
+
+        // x[2] = 3
+        prirejanje_seznamu: $ => seq($.ime, "[", $._izraz, "]", "=", $._izraz),
 
         // { ... }
         okvir: $ => seq("{", optional($._zaporedje), "}"),
@@ -73,11 +91,8 @@ module.exports = grammar({
         // vrni x**2
         vrni: $ => seq("vrni", $._izraz),
 
-        // f(2.0)
-        funkcijski_klic: $ => seq(field("funkcija", $.ime), "(", field("argumenti", optional($.argumenti)), ")"),
-
-        // g!(2, 'a')
-        makro_klic: $ => seq(field("funkcija", $.ime), "!", "(", field("argumenti", optional($.argumenti)), ")"),
+        // 32 kot real
+        pretvorba: $ => seq($._izraz, "kot", $.tip),
 
         // x+3, 12, n*R*T / V
         argumenti: $ => seq(repeat(seq($._izraz, ",")), $._izraz),
@@ -129,8 +144,12 @@ module.exports = grammar({
             $.niz,
             $.ime,
             $.funkcijski_klic,
+            $.pretvorba,
             seq("(", $._izraz, ")"),
             seq("@", $.ime),
+            seq($.ime, "@"),
+            seq($.ime, "[", $._izraz, "]"),
+            seq($.ime, ".", $.ime),
         )),
 
         tip: $ => choice(
@@ -140,6 +159,7 @@ module.exports = grammar({
             "real",
             "znak",
             seq("[", $.tip, ";", $.velikost, "]"),
+            seq("@", "[", $.tip, "]"),
             seq("{", optional($.parametri), "}"),
             seq("@", $.tip),
         ),

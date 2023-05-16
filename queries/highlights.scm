@@ -20,6 +20,8 @@
  ] @type.builtin
 
 [
+    "kot"
+
     "="
 
     "||"
@@ -60,9 +62,12 @@
     "|="
     "^="
     "&="
+
+    "@"
  ] @operator
 
 [
+    "."
     ";"
     ":"
     ","
@@ -97,7 +102,7 @@
 (parameter
     (ime)* @variable.parameter)
 
-(makro_klic
+(multifunkcijski_klic
     (ime) @function)
 
 (funkcijski_klic

@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "tree_sitter_SLJ_binding",
+      "target_name": "tree_sitter_slj_binding",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "src"

@@ -9,7 +9,7 @@
 (parameter
   (ime) @local.definition)
 
-(makro_klic
+(multifunkcijski_klic
     (ime) @local.reference)
 
 (funkcijski_klic

@@ -23,11 +23,31 @@
           "members": [
             {
               "type": "SYMBOL",
+              "name": "multifunkcijski_klic"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "funkcijski_klic"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "deklaracija"
+            },
+            {
+              "type": "SYMBOL",
               "name": "inicializacija"
             },
             {
               "type": "SYMBOL",
+              "name": "prirejanje_referenci"
+            },
+            {
+              "type": "SYMBOL",
               "name": "prirejanje"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "prirejanje_seznamu"
             },
             {
               "type": "SYMBOL",
@@ -51,14 +71,6 @@
             },
             {
               "type": "SYMBOL",
-              "name": "funkcijski_klic"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "makro_klic"
-            },
-            {
-              "type": "SYMBOL",
               "name": "vrni"
             },
             {
@@ -75,13 +87,112 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[;\\n]+"
+              "type": "STRING",
+              "value": ";"
             },
             {
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "multifunkcijski_klic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "funkcija",
+          "content": {
+            "type": "SYMBOL",
+            "name": "ime"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "!"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "argumenti",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "argumenti"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "funkcijski_klic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "funkcija",
+          "content": {
+            "type": "SYMBOL",
+            "name": "ime"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "argumenti",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "argumenti"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "deklaracija": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "naj"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ime"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tip"
         }
       ]
     },
@@ -106,6 +217,27 @@
         }
       ]
     },
+    "prirejanje_referenci": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "ime"
+        },
+        {
+          "type": "STRING",
+          "value": "@"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "prireditveni_op"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_izraz"
+        }
+      ]
+    },
     "prirejanje": {
       "type": "SEQ",
       "members": [
@@ -116,6 +248,35 @@
         {
           "type": "SYMBOL",
           "name": "prireditveni_op"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_izraz"
+        }
+      ]
+    },
+    "prirejanje_seznamu": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "ime"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_izraz"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "STRING",
+          "value": "="
         },
         {
           "type": "SYMBOL",
@@ -542,81 +703,20 @@
         }
       ]
     },
-    "funkcijski_klic": {
+    "pretvorba": {
       "type": "SEQ",
       "members": [
         {
-          "type": "FIELD",
-          "name": "funkcija",
-          "content": {
-            "type": "SYMBOL",
-            "name": "ime"
-          }
+          "type": "SYMBOL",
+          "name": "_izraz"
         },
         {
           "type": "STRING",
-          "value": "("
+          "value": "kot"
         },
         {
-          "type": "FIELD",
-          "name": "argumenti",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "argumenti"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
-    "makro_klic": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "funkcija",
-          "content": {
-            "type": "SYMBOL",
-            "name": "ime"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "!"
-        },
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "FIELD",
-          "name": "argumenti",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "argumenti"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
+          "type": "SYMBOL",
+          "name": "tip"
         }
       ]
     },
@@ -1166,6 +1266,10 @@
             "name": "funkcijski_klic"
           },
           {
+            "type": "SYMBOL",
+            "name": "pretvorba"
+          },
+          {
             "type": "SEQ",
             "members": [
               {
@@ -1188,6 +1292,57 @@
               {
                 "type": "STRING",
                 "value": "@"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "ime"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "ime"
+              },
+              {
+                "type": "STRING",
+                "value": "@"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "ime"
+              },
+              {
+                "type": "STRING",
+                "value": "["
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_izraz"
+              },
+              {
+                "type": "STRING",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "ime"
+              },
+              {
+                "type": "STRING",
+                "value": "."
               },
               {
                 "type": "SYMBOL",
@@ -1239,6 +1394,27 @@
             {
               "type": "SYMBOL",
               "name": "velikost"
+            },
+            {
+              "type": "STRING",
+              "value": "]"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "@"
+            },
+            {
+              "type": "STRING",
+              "value": "["
+            },
+            {
+              "type": "SYMBOL",
+              "name": "tip"
             },
             {
               "type": "STRING",
